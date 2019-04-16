@@ -1,0 +1,22 @@
+//this Example explain that when assign new value to array of char old string not erased or edit but the new value created in new address 
+
+
+#include<stdio.h>
+
+
+void pp(char** a)
+{
+	*a="Eslam";
+	printf("%p %s\n",*a,*a); //address: 01205858 value:  Eslam
+}
+
+int main()
+{
+	char *ptr="world";
+	printf("%p %s\n",ptr,ptr); //address: 01205908 value: world
+	pp(&ptr);
+	printf("%p %s\n",ptr,ptr); //address: 01205858 value:  Eslam
+	ptr="Ahmed";
+	printf("%p %s\n",ptr,ptr); //address: 00D35870 value:   Ahmed
+	return 0;
+}
